@@ -3,12 +3,12 @@ class Logic:
         self.expression = expression  
 
     def evaluate(self, model):
-        """Evaluates the expression based on the truth values in the model."""
+        """Evaluates the expression based on the truth values."""
         tokens = self.tokenize(self.expression)
         return self.evaluate_tokens(tokens, model)
 
     def tokenize(self, expr):
-        """Tokenizes the expression into symbols, operators, and parentheses."""
+        """Tokenizes the expression  symbols, operators, and parentheses."""
         tokens = []
         temp = ""
         for char in expr:
@@ -24,7 +24,7 @@ class Logic:
         return tokens
 
     def evaluate_tokens(self, tokens, model):
-        """Evaluates a tokenized logical expression using a stack-based approach."""
+        """Evaluates a tokenized logical expression using stack."""
         def precedence(op):
             return {"¬": 3, "∧": 2, "∨": 1, "→": 0}.get(op, -1)
 
